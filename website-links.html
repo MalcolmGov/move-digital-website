@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Digital - Website Links</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .link-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .link-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        
+        .link-url {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 14px;
+            word-break: break-all;
+            margin: 10px 0;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .copy-btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+        
+        .copy-btn:active {
+            transform: translateY(0);
+        }
+        
+        .status {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .description {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Move Digital</h1>
+        <p>AI-Powered Marketing Solutions</p>
+    </div>
+
+    <div class="link-card">
+        <div class="link-title">🌐 Main Website (Replit)</div>
+        <div class="description">Fully functional with SSL certificate</div>
+        <div class="link-url" id="replit-url">https://move-digital-malcolm36.replit.app/</div>
+        <button class="copy-btn" onclick="copyToClipboard('replit-url', this)">📋 Copy Link</button>
+        <div class="status">✅ Live & Operational</div>
+    </div>
+
+    <div class="link-card">
+        <div class="link-title">🏠 Custom Domain</div>
+        <div class="description">SSL certificate provisioning in progress</div>
+        <div class="link-url" id="custom-url">https://www.movedigital.africa/</div>
+        <button class="copy-btn" onclick="copyToClipboard('custom-url', this)">📋 Copy Link</button>
+        <div class="status">⏳ SSL Certificate Pending</div>
+    </div>
+
+    <div class="link-card">
+        <div class="link-title">📄 Website Documentation</div>
+        <div class="description">Complete guide with PDF export feature</div>
+        <div class="link-url" id="docs-url">website-documentation.html</div>
+        <button class="copy-btn" onclick="copyToClipboard('docs-url', this)">📋 Copy Filename</button>
+        <div class="status">📁 Project File</div>
+    </div>
+
+    <div class="link-card">
+        <div class="link-title">🎬 Video Script</div>
+        <div class="description">Marketing video creation guide</div>
+        <div class="link-url" id="video-url">video-script.md</div>
+        <button class="copy-btn" onclick="copyToClipboard('video-url', this)">📋 Copy Filename</button>
+        <div class="status">📝 Project File</div>
+    </div>
+
+    <div class="contact-info">
+        <h3>Quick Contact</h3>
+        <a href="https://wa.me/27834654639?text=Hi! I'm interested in your AI marketing services." class="whatsapp-btn">
+            💬 WhatsApp: +27 83 465 4639
+        </a>
+        <p>Email: Info@movedigital.africa</p>
+        <p>Location: Johannesburg, South Africa</p>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId, button) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            // For mobile compatibility
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showCopySuccess(button);
+                }).catch(() => {
+                    fallbackCopyTextToClipboard(text, button);
+                });
+            } else {
+                fallbackCopyTextToClipboard(text, button);
+            }
+        }
+        
+        function fallbackCopyTextToClipboard(text, button) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showCopySuccess(button);
+            } catch (err) {
+                // If copy fails, select the text for manual copy
+                const element = document.getElementById(button.onclick.toString().match(/\'([^']+)\'/)[1]);
+                element.style.background = 'rgba(255,255,255,0.4)';
+                element.style.userSelect = 'all';
+                
+                // Create a range and select the text
+                if (window.getSelection) {
+                    const selection = window.getSelection();
+                    const range = document.createRange();
+                    range.selectNodeContents(element);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                }
+                
+                button.textContent = '👆 Text Selected - Copy Manually';
+                button.style.background = 'linear-gradient(135deg, #ff9800, #f57c00)';
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        function showCopySuccess(button) {
+            const originalText = button.textContent;
+            button.textContent = '✅ Copied!';
+            button.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+            }, 2000);
+        }
+        
+        // Auto-select text on tap for mobile
+        document.querySelectorAll('.link-url').forEach(element => {
+            element.addEventListener('touchstart', function() {
+                if (window.getSelection) {
+                    const selection = window.getSelection();
+                    const range = document.createRange();
+                    range.selectNodeContents(this);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
