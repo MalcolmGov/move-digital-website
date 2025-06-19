@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "buildCommand": "npm install && npx vite build && npm run build:server",
+  "buildCommand": "npm install && npm run build",
   "outputDirectory": "dist/public",
   "installCommand": "npm install",
   "framework": null,
-  "env": {
-    "NODE_ENV": "production"
+  "functions": {
+    "dist/index.js": {
+      "runtime": "nodejs18.x"
+    }
   }
 }
